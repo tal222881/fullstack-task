@@ -52,7 +52,7 @@ For example, if the user types the query "co", all the products matched for this
 - **Make sure your code is easy to read and understand.**
 
 ## Before starting this task
-- Fork this repository ([https://github.com/shynet-cymptom/fullstack-candidate-task](https://github.com/shynet-cymptom/fullstack-candidate-task)).
+- Fork this repository ([https://github.com/cymptomlabs/fullstack-task](https://github.com/cymptomlabs/fullstack-task)).
 - Send a link to the forked github repository to: itamar@cymptom.com .
 
 **Good luck!**
