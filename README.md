@@ -1,49 +1,57 @@
-![](cymptom_logo.svg)
+![](assets/cymptom_logo.svg)
 &nbsp;
 
-# Cymptom Fullstack Candidate Task
+# Shopping cart task summary
 
-## On-demand autocomplete using Angular 8 & NodeJS
-In the following task you are going to build a simple web-page containing an autocomplete component. This component will fetch it's data using your NodeJS backend.
+You are going to build a simple "shopping" page where the user can enter name of products he wishes to buy, and receive suggestions based on his input (auto-complete). When an item is selected, that item will be added to the cart dynamically.
 
-
-## Shopping cart task summary
-
-You are going to build a simple "shopping" page where user can enter names of products he wishes to buy in an "autocomplete" component. When the user selected an item, that item will be added to the table dynamically.
-
-Note that whenever the user types something in the autocomplete component, all data will be filtered and fetches on the NodeJS server.
+Note that whenever the user types something, a request will be send to a NodeJS server, that will filter and fetch the data based on the user input.
 
 
-### Frontend Requirements
+## Frontend Requirements
 
 The framework we are going to use on the frontend will be Angular 8+.
+Build a webpage containing the following components:
 
-You are required to build a webpage containing the following:
+### Autocomplete
+Build an autocomplete component that contains the following features:
 
-- An autocomplete component which fetches data from NodeJS server. On each keystroke, new data will be fetched from the server (containing at least 20 products), the data must be filtered on the server sent, and for each change in the autocomplete, new data will be fetched from the server.
+- Fetches autocomplete data from NodeJS server. On each keystroke, new data will be fetched from the server (showing at least 20 products), the data must be filtered on the server side, and for each change in the autocomplete, new data will be fetched from the server.
 
-When the user hits enter to select an item, the selected product from the autocomplete will be added to a table.
+- When the user hits enter to select an item, the selected product from the autocomplete will be added to the cart table. Make sure arrow keys allows you to navigate between the autocomplete suggestions (focusing and highlighting an item), and Enter key selects an item and adds it to the list. User can also use the mouse to select items.
 
-- The table will be a simple HTML table which renders only the items added to the list from the autocomplete. It must show the following rows: "Name, Price, Picture".
+- Make sure when navigating between items, if a item is selected by the user and out of the viewport, it will automatically scroll to it.
+
+**DO NOT USE ANY NPM PACKAGE FOR THE AUTOCOMPLETE, YOU MUST BUILD THE AUTOCOMPLETE COMPONENT BY YOURSELF.**
+
+Here is an example of google maps autocomplete component:
 
 
-### Backend Requirements
+![](assets/autocomplete_example.png)
 
-You are going to use NodeJS with Express in order to build the server side.
 
-We have provided a file called 'products.json' in the repository, use it to load all of the products list into your NodeJS server.
+### Shopping items table
 
-On the server site, simply create an API which allows fetching all of the products which fit the filtered keyword.
+Build a simple HTML table which renders only the items added to the list from the autocomplete. It must show the following rows: "Name, Price, Picture".  The user can remove items from the list using an 'X' button for each row.
 
-For example, if the user searches for the query: "yo" all of the products suitable for this phrase will (for example: yo-yo, yoga ball) be returned with their data.
+## Backend Requirements
 
-### General guidelines and flow of work
+You must use NodeJS with Express for the server side.
+
+You are provided a file called 'products.json' (found under `assets/products.json`) in the repository, use it to load the product list into your NodeJS server.
+
+On the server site, simply create an API which allows fetching the products which match the filter keyword.
+
+For example, if the user types the query "co", all the products matched for this phrase will be returned with their data (for example: coat, gaming console, tobacco) .
+
+## General Requirements
 - You should work with GitHub repository to store and manage your code.
 - You should be using Angular 8+ and NodeJS typescript.
 - You are required to write your code using OOP concepts
 - Document your code as much as needed
+- **Make sure your code is easy to read and understand.**
 
-### Before starting this task
+## Before starting this task
 - Fork this repository ([https://github.com/shynet-cymptom/fullstack-candidate-task](https://github.com/shynet-cymptom/fullstack-candidate-task)).
 - Send a link to the forked github repository to: itamar@cymptom.com .
 
