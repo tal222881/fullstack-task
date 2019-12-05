@@ -1,0 +1,40 @@
+.search_holder {
+  max-width: 70%;
+  margin-top: 35px;
+}
+
+.search_holder form {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.search_holder mat-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.search_holder form .drop {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 38px;
+  left: 0px;
+  right: 0px;
+  background: #ffffff;
+  border: 2px solid #80d0fb;
+  overflow-y: auto;
+}
+
+.search_holder form .drop div.res {
+  display: block;
+  padding: 7px;
+  font-size: 15px;
+}
+
+.search_holder form .drop div.res.active,
+.search_holder form .drop div.res:hover {
+  background: #92cbff;
+  cursor: pointer;
+}

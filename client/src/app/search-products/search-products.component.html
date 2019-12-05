@@ -1,0 +1,40 @@
+<h4 class="text-muted">Tal's Shop > Cart</h4>
+<div class="search_holder">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="input-group mb-3">
+        <form>
+          <input
+            type="text"
+            name="search_q"
+            [(ngModel)]="search"
+            #search_q
+            (input)="searchPosts($event)"
+            (keydown)="keysControl($event)"
+            class="form-control"
+            placeholder="Product Name"
+            aria-label="Product Name"
+            aria-describedby="basic-addon2"
+          />
+
+          <mat-icon>search</mat-icon>
+          <div
+            class="drop"
+            #drop_elem
+            *ngIf="(productOb$ | async)?.length != 0 && isDrop"
+          >
+            <div
+              class="res"
+              *ngFor="let p of productOb$ | async as productOb; let i = index"
+              [class.active]="i == arrowkeyLocation"
+              (click)="addToCart(i, p)"
+            >
+              {{ p.name }}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-cart-comp></app-cart-comp>

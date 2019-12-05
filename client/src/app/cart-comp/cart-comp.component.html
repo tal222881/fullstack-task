@@ -1,0 +1,20 @@
+<h5 class="mt-5">Your Cart:</h5>
+<table class="table table-striped mt-2" *ngIf="cart.length">
+  <thead>
+    <tr>
+      <td>Action</td>
+      <td>Image</td>
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of cart">
+      <td><mat-icon (click)="removeProductFromCart(p)">delete</mat-icon></td>
+      <td><img src="{{ p.image }}" class="img-thumbnail" /></td>
+      <td>{{ p.name }}</td>
+      <td>${{ p.price }}</td>
+    </tr>
+  </tbody>
+</table>

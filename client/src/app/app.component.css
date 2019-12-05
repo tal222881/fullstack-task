@@ -1,0 +1,20 @@
+div.shop_page {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+app-left-side {
+  flex: 1;
+  display: flex;
+  background: #1f3744;
+  flex: 1;
+  padding: 35px 15px;
+}
+
+app-search-products {
+  display: flex;
+  padding: 35px;
+  flex: 10;
+  flex-direction: column;
+}

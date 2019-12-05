@@ -1,0 +1,17 @@
+table {
+  background: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #f1faff;
+}
+
+table img {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
+table tr td {
+  vertical-align: middle;
+}
