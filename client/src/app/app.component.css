@@ -1,11 +1,11 @@
 div.shop_page {
   display: flex;
   align-items: stretch;
-  height: 100%;
+  min-height: 100%;
 }
 
 app-left-side {
-  flex: 1;
+  min-height: 100%;
   display: flex;
   background: #1f3744;
   flex: 1;

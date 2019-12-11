@@ -14,8 +14,16 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProductByChars(chars: string): Observable<Product[]> {
+    return chars.length
+      ? this.http
+          .get<Product[]>(this.base_path + "/match/" + chars)
+          .pipe(catchError(err => this.handleError(err)))
+      : new Observable<Product[]>();
+  }
+
+  getMoreDropDownOption(): Observable<Product[]> {
     return this.http
-      .get<Product[]>(this.base_path + "/match/" + chars)
+      .get<Product[]>(this.base_path + "/more_option")
       .pipe(catchError(err => this.handleError(err)));
   }
 
@@ -30,9 +38,6 @@ export class ProductsService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.error(errorMessage);
-    //if (error.status !== 404) {
     return throwError(errorMessage);
-    //}
-    //console.log(error.status);
   }
 }

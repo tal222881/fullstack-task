@@ -5,12 +5,13 @@
       <div class="input-group mb-3">
         <form>
           <input
+            class="search_input"
             type="text"
             name="search_q"
             [(ngModel)]="search"
-            #search_q
-            (input)="searchPosts($event)"
-            (keydown)="keysControl($event)"
+            value="search"
+            (keydown)="preventCursorToStart($event)"
+            (keyup)="hanldeSearch($event)"
             class="form-control"
             placeholder="Product Name"
             aria-label="Product Name"
@@ -20,14 +21,24 @@
           <mat-icon>search</mat-icon>
           <div
             class="drop"
+            (scroll)="onElementScroll($event)"
             #drop_elem
-            *ngIf="(productOb$ | async)?.length != 0 && isDrop"
+            *ngIf="(productOb$ | async)?.length != 0 && openDropDown"
           >
             <div
+              class="spinner-border text-info"
+              role="status"
+              *ngIf="visibleLoader"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+
+            <div
               class="res"
-              *ngFor="let p of productOb$ | async as productOb; let i = index"
-              [class.active]="i == arrowkeyLocation"
-              (click)="addToCart(i, p)"
+              *ngFor="let p of products; let i = index"
+              [class.active]="i == selectedOptionIndex"
+              (click)="addToCart(p)"
+              (mouseover)="selectedOptionIndex = i"
             >
               {{ p.name }}
             </div>

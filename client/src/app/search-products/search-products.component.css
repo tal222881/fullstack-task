@@ -27,6 +27,13 @@
   overflow-y: auto;
 }
 
+.search_holder form .drop .spinner-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -15px 0px 0px -15px;
+}
+
 .search_holder form .drop div.res {
   display: block;
   padding: 7px;
